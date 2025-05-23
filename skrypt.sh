@@ -7,3 +7,9 @@ if [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     echo -e "$filename\nScript: $0\nDate: $(date)" > "$filename"
   done
 fi
+
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+  echo "--date, -d       Wyświetla dzisiejszą datę"
+  echo "--logs, -l [n]   Tworzy pliki logX.txt"
+  echo "--help, -h       Wyświetla tę pomoc"
+fi
