@@ -13,3 +13,11 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
   echo "--logs, -l [n]   Tworzy pliki logX.txt"
   echo "--help, -h       Wyświetla tę pomoc"
 fi
+
+if [[ "$1" == "--error" || "$1" == "-e" ]]; then
+  count=${2:-100}
+  mkdir -p error
+  for i in $(seq 1 $count); do
+    echo -e "error$i.txt\nScript: $0\nDate: $(date)" > "error/error$i.txt"
+  done
+fi
